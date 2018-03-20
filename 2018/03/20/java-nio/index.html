@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/20/java-nio/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="//示例：    try {            RandomAccessFile randomAccessFile = new RandomAccessFile(“D://log4j222222.log”,”rw”);            FileChannel fileChannel = randomAccessFile.getChannel();//获取通道            Byt">
-<meta property="og:updated_time" content="2018-03-20T07:58:25.662Z">
+<meta property="og:updated_time" content="2018-03-20T08:30:00.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java NIO学习">
 <meta name="twitter:description" content="//示例：    try {            RandomAccessFile randomAccessFile = new RandomAccessFile(“D://log4j222222.log”,”rw”);            FileChannel fileChannel = randomAccessFile.getChannel();//获取通道            Byt">
@@ -305,7 +305,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>//示例：<br>    try {<br>            RandomAccessFile randomAccessFile = new RandomAccessFile(“D://log4j222222.log”,”rw”);<br>            FileChannel fileChannel = randomAccessFile.getChannel();//获取通道<br>            ByteBuffer byteBuffer = ByteBuffer.allocate(100);//一次读取的数据大小<br>            int byteRead = fileChannel.read(byteBuffer);//读取数据到buff<br>            while(byteRead!=-1){<br>                byteBuffer.flip();//反转buff<br>                while(byteBuffer.hasRemaining()){//从buff读取数据<br>                    System.out.print((char) byteBuffer.get());<br>                }<br>                System.out.println(“———-“);<br>                byteBuffer.clear();//读取完毕 清理buff<br>                byteRead = fileChannel.read(byteBuffer);//重新读取<br>            }<br>        randomAccessFile.close();<br>        } catch (Exception e) {<br>            e.printStackTrace();<br>        }</p>
+        <p>//示例：<br>    try {<br>            RandomAccessFile randomAccessFile = new RandomAccessFile(“D://log4j222222.log”,”rw”);<br>            FileChannel fileChannel = randomAccessFile.getChannel();//获取通道<br>            ByteBuffer byteBuffer = ByteBuffer.allocate(100);//一次读取的数据大小<br>            int byteRead = fileChannel.read(byteBuffer);//读取数据到buff<br>            while(byteRead!=-1){<br>                byteBuffer.flip();//反转buff 写模式切换到读模式<br>                while(byteBuffer.hasRemaining()){//从buff读取数据<br>                    System.out.print((char) byteBuffer.get());<br>                }<br>                System.out.println(“———-“);<br>                byteBuffer.clear();//读取完毕 清理buff<br>                byteRead = fileChannel.read(byteBuffer);//重新读取<br>            }<br>        randomAccessFile.close();<br>        } catch (Exception e) {<br>            e.printStackTrace();<br>        }</p>
 
       
     </div>
@@ -317,7 +317,7 @@
         <p><span>本文标题:</span><a  href="/2018/03/20/java-nio/">java NIO学习</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Super Wangx 的个人博客">Super Wangx</a></p>
         <p><span>发布时间:</span>2018年03月20日 - 15时27分</p>
-        <p><span>最后更新:</span>2018年03月20日 - 15时58分</p>
+        <p><span>最后更新:</span>2018年03月20日 - 16时30分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/03/20/java-nio/" title="java NIO学习">http://yoursite.com/2018/03/20/java-nio/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/03/20/java-nio/　　作者: Super Wangx" title=""></span>
